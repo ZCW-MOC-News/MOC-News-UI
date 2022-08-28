@@ -4,6 +4,7 @@ import AppleNewsLogo from "./AppleNewsLogo.svg"
 import {
     BellIcon,
     ChatIcon,
+    ChevronDownIcon,
     HomeIcon,
     UserGroupIcon,
     ViewGridIcon,
@@ -25,7 +26,7 @@ function Header() {
             { /* Header Left */ }
             <div className="flex items-center">
                 <Image 
-                    src="https://links.papareact.com/5me"
+                    src={AppleNewsLogo}
                     width={40}
                     height={40} 
                     layout="fixed"
@@ -66,6 +67,10 @@ function Header() {
                 {/* Profile Picture for User */}
 
                 <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
+                <ViewGridIcon className="icon" />
+                <ChatIcon className="icon" />
+                <BellIcon className="icon" />
+                <ChevronDownIcon className="icon" />
 
 
             </div>
