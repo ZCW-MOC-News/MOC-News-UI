@@ -1,4 +1,6 @@
 import Image from "next/image";
+import AppleNewsLogo from "./AppleNewsLogo.svg"
+
 import {
     BellIcon,
     ChatIcon,
@@ -12,12 +14,13 @@ import {
     SearchIcon,
     ShoppingCartIcon,
 } from "@heroicons/react/outline";
+import HeaderIcon from "./HeaderIcon";
 
 function Header() {
     return (
-        <div>
+        <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
-            <h1 className="text-6xl">MOC News</h1>
+            {/* <h1 className="text-6xl">MOC News</h1> */}
 
             { /* Header Left */ }
             <div className="flex items-center">
@@ -32,8 +35,9 @@ function Header() {
                     <SearchIcon className="h-6 text-grey-600" />
 
                     <input 
-                        className="flex m1-2 items-center bg-transparent outline-none
-                        placeholder-gray-500" 
+                        className="hidden md:inline-flex ml-2 items-center bg-transparent 
+                        outline-none
+                        placeholder-gray-500 flex-shrink" 
                         type="text" 
                         placeholder="Search News" />
 
@@ -45,10 +49,26 @@ function Header() {
 
             { /* Header Center */ }
 
+            <div className ="flex justify-center flex-grow">
 
+                <div className='flex space-x-10 md:space-x-2'>
+                    <HeaderIcon active Icon={HomeIcon} />
+                    <HeaderIcon Icon={FlagIcon} />
+                    <HeaderIcon Icon={PlayIcon} />
+                    <HeaderIcon Icon={ShoppingCartIcon} />
+                    <HeaderIcon Icon={UserGroupIcon} />
+
+            </div>
+        </div>
+        
             { /* Header Right */ }
+            <div className="flex items-center sm:space-x-2 justify-end">
+                {/* Profile Picture for User */}
+
+                <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
 
 
+            </div>
         </div>
     );
 }

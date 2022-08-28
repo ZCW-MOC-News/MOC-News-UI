@@ -9,7 +9,7 @@ export default function Home() {
         <title>MOC News</title>
       </Head>
 
-      <h1>Let's build MOC News!</h1>
+      {/* <h1>Let's build MOC News!</h1> */}
 
       { /* Header */ }
       <Header />
