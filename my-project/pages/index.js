@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/Header';
 import Feed from '../components/Feed';
+import Signin from './Signin';
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
       { /* Widgets */ }
 
       </main>
+      <Signin></Signin>
 
     </div>
   )
 }
+
