@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from '../components/Header';
-
+import Feed from '../components/Feed';
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
 
       { /* Sidebar */ }
       { /* Newsfeed */ }
+      <Feed />
       { /* Widgets */ }
 
       </main>
@@ -25,3 +26,5 @@ export default function Home() {
     </div>
   )
 }
+
+
