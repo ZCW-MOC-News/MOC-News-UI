@@ -23,7 +23,7 @@ export default function Home() {
       { /* Widgets */ }
 
       </main>
-      <Signin></Signin>
+      {/* <Signin></Signin> */}
 
     </div>
   )

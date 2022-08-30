@@ -1,10 +1,12 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
+import Signin from "../pages/Signin"
+import Dropdown from "./Dropdown.js"
+
 
 import {
     BellIcon,
     ChatIcon,
-    ChevronDownIcon,
     HomeIcon,
     UserGroupIcon,
     ViewGridIcon,
@@ -17,7 +19,12 @@ import {
 } from "@heroicons/react/outline";
 import HeaderIcon from "./HeaderIcon";
 
+
 function Header() {
+      const handleClick = () => {
+        console.log('hello ninjas')
+    }
+
     return (
         <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
@@ -53,6 +60,7 @@ function Header() {
 
             { /* Header Center */ }
 
+
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
@@ -61,6 +69,7 @@ function Header() {
                     <HeaderIcon Icon={PlayIcon} />
                     <HeaderIcon Icon={ShoppingCartIcon} />
                     <HeaderIcon Icon={UserGroupIcon} />
+                    
 
             </div>
         </div>
@@ -73,11 +82,17 @@ function Header() {
                 <ViewGridIcon className="icon" />
                 <ChatIcon className="icon" />
                 <BellIcon className="icon" />
-                <ChevronDownIcon className="icon" />
+                <Dropdown/>
+                {/* <button onClick={handleClick}> <ChevronDownIcon className="icon" /> </button> */}
+                        
+            
 
 
-            </div>
+            </div>       
         </div>
+
+        
+        
     );
 }
 
