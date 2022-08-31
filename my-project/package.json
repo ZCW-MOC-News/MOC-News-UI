@@ -15,10 +15,12 @@
     "bootstrap": "^5.2.0",
     "classnames": "^2.3.1",
     "flowbite": "^1.5.2",
+    "heroicons-react": "^1.4.1",
     "next": "12.2.5",
     "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.3.0",
     "sharp": "^0.30.7"
   },
   "devDependencies": {

@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { UserCircleIcon } from '@heroicons/react/solid'
@@ -11,9 +10,9 @@ export default function Example() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button>
-          Options
-          <UserCircleIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+        <Menu.Button >
+          
+          <UserCircleIcon className="icon" />
         </Menu.Button>
       </div>
 
@@ -31,7 +30,7 @@ export default function Example() {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/signin"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
@@ -50,20 +49,7 @@ export default function Example() {
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Sign up
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Remove
+                  Create account
                 </a>
               )}
             </Menu.Item>
