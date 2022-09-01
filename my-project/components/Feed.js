@@ -13,7 +13,7 @@ function Feed () {
     const [articles, setArticles] = useState(0);
 
 
-    axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=1e1112b09c134842add85fbcff107d95')
+    axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a5471905bdc34ec896ea6da26b298091')
     .then(response => { 
         setArticles(response.data.articles
         ); 
@@ -21,7 +21,9 @@ function Feed () {
     });
 
     return (
-        <div>
+
+        <div className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto">
+            <div className='mx-auto max-wd-md md:max-w-1g'>
             {articles
                 &&
                 articles.map((item, i) => (
@@ -29,7 +31,7 @@ function Feed () {
                         <TableContainer component={Paper}>
                             <TableHead>
                                 <TableRow>
-                                    <TableCells>Title: {item.title}</TableCells>
+                                    <TableCell>Title: {item.title}</TableCell>
 
                                 </TableRow>
                                 <TableRow>
@@ -44,8 +46,10 @@ function Feed () {
                         </TableContainer>
 
                     </div>
+                    
                 ))
             }
+        </div>
         </div>
     );
 }
