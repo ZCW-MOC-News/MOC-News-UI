@@ -29,7 +29,7 @@ function Feed () {
                         <TableContainer component={Paper}>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>Title: {item.title}</TableCell>
+                                    <TableCells>Title: {item.title}</TableCell>
 
                                 </TableRow>
                                 <TableRow>
