@@ -1,1 +1,1 @@
-# MOC-News-UI-Draft
+# MOC-News-UI
