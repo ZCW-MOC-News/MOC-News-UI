@@ -26,7 +26,7 @@ function Header() {
     return (
         <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
-        {/* <h1 className="text-xl whitespace-nowrap font-semibold pr-3">MOC News</h1> */}
+        {/*,m <h1 className="text-xl whitespace-nowrap font-semibold pr-3">MOC News</h1> */}
 
             { /* Header Left */ }
             <div className="flex items-center">
