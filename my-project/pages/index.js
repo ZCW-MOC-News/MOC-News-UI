@@ -24,9 +24,9 @@ export default function Home() {
       { /* Widgets */ }
 
       </main>
+      {/* <Signin /> */}
 
     </div>
   )
 }
-
 
