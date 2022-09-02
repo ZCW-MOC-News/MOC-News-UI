@@ -6,6 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import Stories from './Stories';
 
 
 function Feed () {
@@ -21,9 +22,11 @@ function Feed () {
     });
 
     return (
+    
 
         <div className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto">
             <div className='mx-auto max-wd-md md:max-w-1g'>
+            <div><Stories />
             {articles
                 &&
                 articles.map((item, i) => (
@@ -49,6 +52,7 @@ function Feed () {
                     
                 ))
             }
+        </div>
         </div>
         </div>
     );
