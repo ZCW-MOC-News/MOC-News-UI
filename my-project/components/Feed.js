@@ -11,15 +11,28 @@ import Stories from './Stories';
 
 function Feed () {
 
-    const [articles, setArticles] = useState(0);
+    const [articles, setArticles] = useState([]);
 
+    const getArticles = () => {
+        axios.get("http://localhost:8080/articles/all")
+          .then((response) => {
+            console.log("Success");
+            setArticles(response.data);
+          })
+          .catch((e) => {
+            console.log("Error");
+            setArticles([]);
+          });
+      };
 
-    axios.get('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a5471905bdc34ec896ea6da26b298091')
-    .then(response => { 
-        setArticles(response.data.articles
-        ); 
+      React.useEffect(() => getArticles(), []);
 
-    });
+    // axios.get("http://localhost:8080/articles/all")
+    // .then(response => { 
+    //     setArticles(response.data); 
+    //     console.log(response.data);
+
+    // });
 
     return (
     
