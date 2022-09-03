@@ -2,7 +2,7 @@ import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 
 import {
-    MicrophoneIcon,
+    PlusCircleIcon,
     FolderIcon,
     ChevronDownIcon,
     HomeIcon,
@@ -78,8 +78,7 @@ function Header() {
 
                 <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
                 <CogIcon className="icon" />
-                <MicrophoneIcon className="icon" />
-                <FolderIcon className="icon" />
+                <PlusCircleIcon className="icon" />
                 <ChevronDownIcon className="icon" />
 
 
