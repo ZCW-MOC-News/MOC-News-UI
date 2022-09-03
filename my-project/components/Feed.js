@@ -1,109 +1,100 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
+import Stories from "./Stories";
+import Story from "./Story";
+import { motion } from "framer-motion";
+import Head from "next/head";
 
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Stories from './Stories';
+const list = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.2, deplay: 1 },
+  },
+};
+const item = {
+  hidden: { x: -20, opacity: 0 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
+function Feed() {
+  const [articles, setArticles] = useState([]);
 
-function Feed () {
+  const getArticles = () => {
+    axios
+      .get("http://localhost:8080/articles/all")
+      .then((response) => {
+        console.log("Success");
+        setArticles(response.data);
+      })
+      .catch((e) => {
+        console.log("Error");
+        setArticles([]);
+      });
+  };
 
-    const [articles, setArticles] = useState([]);
+  React.useEffect(() => getArticles(), []);
 
-    const getArticles = () => {
-        axios.get("http://localhost:8080/articles/all")
-          .then((response) => {
-            console.log("Success");
-            setArticles(response.data);
-          })
-          .catch((e) => {
-            console.log("Error");
-            setArticles([]);
-          });
-      };
+  // return (
 
-      React.useEffect(() => getArticles(), []);
+  //     <div className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto">
+  //         <div className='mx-auto max-wd-md md:max-w-1g'>
 
-    // axios.get("http://localhost:8080/articles/all")
-    // .then(response => { 
-    //     setArticles(response.data); 
-    //     console.log(response.data);
+  //             <div><Stories />
+  //             <div class="flex-grow grid grid-cols-1 gap-10 place-content-center h-48">
+  //                 {articles
+  //                     &&
+  //                     articles.map((item, i) => (
+  //                         <div key={i}>
 
-    // });
+  //                             <div className="box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">{item.title}</div>
+  //                                 <div>Author: {item.author}</div>
+  //                                 <div> Description: {item.description}</div>
 
-    return (
-    
+  //                         </div>
 
-        <div className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto">
-            <div className='mx-auto max-wd-md md:max-w-1g'>
-            <div><Stories />
-            {articles
-                &&
-                articles.map((item, i) => (
-                    <div key={i}>
-                        <TableContainer component={Paper}>
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell>Title: {item.title}</TableCell>
-
-                                </TableRow>
-                                <TableRow>
-
-                                    <TableCell>Author: {item.author}</TableCell>
-                                </TableRow>
-                                <TableRow>
-
-                                    <TableCell>Description: {item.description}</TableCell>
-                                </TableRow>
-                            </TableHead>
-                        </TableContainer>
-
-                    </div>
-                    
-                ))
-            }
+  //                     ))
+  //                 }
+  //             </div>
+  //             </div>
+  //         </div>
+  //     </div>
+  // );
+  return (
+    <>
+      <Head>
+        <title>MOC News</title>
+      </Head>
+      <div className="flex justify-center space-x-3 mx-auto">
+        <div className="lg:col-span-2 mt-8">
+          <span className="main-title flex items-center text-soft-black">
+            <h1 className="fancy-undeline text-xl">MOC News</h1>
+          </span>
+          <div className="mt-4">
+            <motion.div
+              className="children"
+              initial="hidden"
+              animate="show"
+              variants={list}
+            >
+              {articles.map((story, i) => (
+                <motion.div variants={item}>
+                  <Story story={story} key={i} />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+          <button className="more-btn">Load more</button>
         </div>
-        </div>
-        </div>
-    );
+      </div>
+    </>
+  );
 }
 
-
 export default Feed;
-
-// export const Feed = ({ article }) => {
-//     return (
-//         <div>
-//             {articles
-//                  &&
-//                 articles.map((item, i) => (
-//                     <div key={i}>
-//                         <h3>Title: {item.title}</h3>
-//                         <h3>Author: {item.author}</h3>
-//                     </div>
-//                 ))
-//             }
-//         </div>
-//     )
-// }
-
-
-// export const getServerSideProps = async () => {
-//     const apiResponse = await fetch(
-//         'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a5471905bdc34ec896ea6da26b298091',
-//     );
-//     const articles = await apiResponse.json();
-//     console.log(articles)
-
-//     return {
-        
-//         props: {
-//             article,
-//         },
-//     };
-// };
-
-// export default Feed
