@@ -2,27 +2,25 @@ import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 import Dropdown from "./Dropdown.js"
 
-
-
 import {
-    BellIcon,
-    ChatIcon,
+    PlusCircleIcon,
+    FolderIcon,
+    ChevronDownIcon,
     HomeIcon,
-    // UserCircleIcon,
-    UserGroupIcon,
-    ViewGridIcon,
+    CogIcon,
+    HeartIcon,
 } from "@heroicons/react/solid";
+
 import {
-    FlagIcon,
-    PlayIcon,
+    FireIcon,
+    BookmarkIcon,
     SearchIcon,
-    ShoppingCartIcon,
+    InformationCircleIcon,
 } from "@heroicons/react/outline";
+
 import HeaderIcon from "./HeaderIcon";
 
-
 function Header() {
-    
     return (
         <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
@@ -36,6 +34,8 @@ function Header() {
                     height={40} 
                     layout="fixed"
                 />
+
+                
 
                 <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
 
@@ -56,16 +56,14 @@ function Header() {
 
             { /* Header Center */ }
 
-
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
                     <HeaderIcon active Icon={HomeIcon} />
-                    <HeaderIcon Icon={FlagIcon} />
-                    <HeaderIcon Icon={PlayIcon} />
-                    <HeaderIcon Icon={ShoppingCartIcon} />
-                    <HeaderIcon Icon={UserGroupIcon} />
-                    
+                    <HeaderIcon Icon={FireIcon} />
+                    <HeaderIcon Icon={BookmarkIcon} />
+                    <HeaderIcon Icon={HeartIcon} />
+                    <HeaderIcon Icon={InformationCircleIcon} />
 
             </div>
         </div>
@@ -73,25 +71,25 @@ function Header() {
             { /* Header Right */ }
             <div className="flex items-center sm:space-x-2 justify-end">
                 {/* Profile Picture for User */}
+                <Image
+                    className="rounded-full cursor-pointer"
+                    src={AppleNewsLogo}
+                    width="40"
+                    height="40"
+                    layout="fixed"
+                />
 
                 <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
-                <ViewGridIcon className="icon" />
-                <ChatIcon className="icon" />
-                <BellIcon className="icon" />
-                <Dropdown/>
-                
-                
-                        
-            </div>       
-            
+                <CogIcon className="icon" />
+                <PlusCircleIcon className="icon" />
+                <ChevronDownIcon className="icon" />
+                <Dropdown />
+
+
+            </div>
         </div>
-        
-    
-        
-        
     );
 }
-
 
 export default Header;
 
