@@ -19,15 +19,15 @@
 - **O**ctavia Gomes
 - **C**hris Kent
    
-## 🎨 Frontend Techstack
+## 🎨 Frontend Tech Stack
 
 - [**JavaScript**](https://www.javascript.com/) - Language
 - [**Next.js**](https://nextjs.org/) - Framework
 - [**TailwindCSS**](https://tailwindcss.com/) - Styling
 
    
-## :sparkles: Backend Techstack
+## :sparkles: Backend Tech Stack
 
 - [**Java**](https://swr.vercel.app/) - Language
 - [**Spring Boot**](https://start.spring.io/) - Framework
-- [**MySQL**](https://www.mysql.com/) - Database
+- [**MySQL**](https://www.mysql.com/) - Database hosted on AWS RDS
