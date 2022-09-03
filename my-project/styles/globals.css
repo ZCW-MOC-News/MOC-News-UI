@@ -25,3 +25,12 @@ a {
 * {
   box-sizing: border-box;
 } */
+
+.news-card {
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
+  @apply mb-4 shadow bg-white py-8 flex flex-row items-center divide-x rounded cursor-pointer;
+  @apply transition transform duration-500 ease-in-out hover:shadow-md hover:-translate-y-1 hover:scale-105;
+  @apply w-full lg:w-140;
+}
