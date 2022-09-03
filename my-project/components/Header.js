@@ -2,18 +2,18 @@ import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 
 import {
-    BellIcon,
-    ChatIcon,
+    MicrophoneIcon,
+    FolderIcon,
     ChevronDownIcon,
     HomeIcon,
-    UserGroupIcon,
-    ViewGridIcon,
+    CogIcon,
+    HeartIcon,
 } from "@heroicons/react/solid";
 import {
-    FlagIcon,
-    PlayIcon,
+    FireIcon,
+    BookmarkIcon,
     SearchIcon,
-    ShoppingCartIcon,
+    InformationCircleIcon,
 } from "@heroicons/react/outline";
 import HeaderIcon from "./HeaderIcon";
 
@@ -57,10 +57,10 @@ function Header() {
 
                 <div className='flex space-x-10 md:space-x-2'>
                     <HeaderIcon active Icon={HomeIcon} />
-                    <HeaderIcon Icon={FlagIcon} />
-                    <HeaderIcon Icon={PlayIcon} />
-                    <HeaderIcon Icon={ShoppingCartIcon} />
-                    <HeaderIcon Icon={UserGroupIcon} />
+                    <HeaderIcon Icon={FireIcon} />
+                    <HeaderIcon Icon={BookmarkIcon} />
+                    <HeaderIcon Icon={HeartIcon} />
+                    <HeaderIcon Icon={InformationCircleIcon} />
 
             </div>
         </div>
@@ -68,11 +68,18 @@ function Header() {
             { /* Header Right */ }
             <div className="flex items-center sm:space-x-2 justify-end">
                 {/* Profile Picture for User */}
+                <Image
+                    className="rounded-full cursor-pointer"
+                    src={AppleNewsLogo}
+                    width="40"
+                    height="40"
+                    layout="fixed"
+                />
 
                 <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
-                <ViewGridIcon className="icon" />
-                <ChatIcon className="icon" />
-                <BellIcon className="icon" />
+                <CogIcon className="icon" />
+                <MicrophoneIcon className="icon" />
+                <FolderIcon className="icon" />
                 <ChevronDownIcon className="icon" />
 
 
