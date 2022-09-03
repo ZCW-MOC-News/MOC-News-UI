@@ -1,11 +1,14 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
+import Dropdown from "./Dropdown.js"
+
+
 
 import {
     BellIcon,
     ChatIcon,
-    ChevronDownIcon,
     HomeIcon,
+    // UserCircleIcon,
     UserGroupIcon,
     ViewGridIcon,
 } from "@heroicons/react/solid";
@@ -17,7 +20,9 @@ import {
 } from "@heroicons/react/outline";
 import HeaderIcon from "./HeaderIcon";
 
+
 function Header() {
+    
     return (
         <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
@@ -31,8 +36,6 @@ function Header() {
                     height={40} 
                     layout="fixed"
                 />
-
-                
 
                 <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
 
@@ -53,6 +56,7 @@ function Header() {
 
             { /* Header Center */ }
 
+
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
@@ -61,6 +65,7 @@ function Header() {
                     <HeaderIcon Icon={PlayIcon} />
                     <HeaderIcon Icon={ShoppingCartIcon} />
                     <HeaderIcon Icon={UserGroupIcon} />
+                    
 
             </div>
         </div>
@@ -73,13 +78,20 @@ function Header() {
                 <ViewGridIcon className="icon" />
                 <ChatIcon className="icon" />
                 <BellIcon className="icon" />
-                <ChevronDownIcon className="icon" />
-
-
-            </div>
+                <Dropdown/>
+                
+                
+                        
+            </div>       
+            
         </div>
+        
+    
+        
+        
     );
 }
+
 
 export default Header;
 
