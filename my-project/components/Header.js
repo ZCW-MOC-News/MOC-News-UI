@@ -1,5 +1,6 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
+import Dropdown from "./Dropdown.js"
 
 import {
     PlusCircleIcon,
@@ -9,12 +10,14 @@ import {
     CogIcon,
     HeartIcon,
 } from "@heroicons/react/solid";
+
 import {
     FireIcon,
     BookmarkIcon,
     SearchIcon,
     InformationCircleIcon,
 } from "@heroicons/react/outline";
+
 import HeaderIcon from "./HeaderIcon";
 
 function Header() {
@@ -80,6 +83,7 @@ function Header() {
                 <CogIcon className="icon" />
                 <PlusCircleIcon className="icon" />
                 <ChevronDownIcon className="icon" />
+                <Dropdown />
 
 
             </div>
