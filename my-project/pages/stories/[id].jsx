@@ -65,11 +65,11 @@ export default function Best() {
                     {dayjs(data.date).format("MMM D, YYYY")}
                   </p>
                   <p className="text-xs text-gray-500 mr-4 flex items-start">
-                    <LikeIcon />2
+                    <LikeIcon />{data.likes_count}
                   </p>
                   <figure className="flex items-start">
                     <ChatIcon />
-                    <figcaption className="text-xs text-gray-500">5</figcaption>
+                    <figcaption className="text-xs text-gray-500">{data.comments_count}</figcaption>
                   </figure>
                 </div>
               </div>
