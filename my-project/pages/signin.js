@@ -1,5 +1,7 @@
 import cx from 'classnames';
 import styles from '../styles/Signin.module.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
 
 export default Signin;
 
@@ -7,7 +9,7 @@ function Signin() {
   
   return (
     <>
-    
+
       <main className={cx(styles["form-signin"],"text-center","mt-5")}>
         <form>
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
