@@ -1,5 +1,6 @@
 import cx from 'classnames';
 import styles from '../styles/Signin.module.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 export default Signin;
 

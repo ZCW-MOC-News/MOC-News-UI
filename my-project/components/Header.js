@@ -28,12 +28,12 @@ function Header() {
 
             { /* Header Left */ }
             <div className="flex items-center">
-                <Image 
+            <a href="http://localhost:3000/"><Image 
                     src={AppleNewsLogo}
                     width={40}
                     height={40} 
                     layout="fixed"
-                />
+                /></a>
 
                 
 
@@ -59,7 +59,7 @@ function Header() {
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
-                    <HeaderIcon active Icon={HomeIcon} />
+                    <a href="http://localhost:3000/"><HeaderIcon active Icon={HomeIcon} /></a>
                     <HeaderIcon Icon={FireIcon} />
                     <HeaderIcon Icon={BookmarkIcon} />
                     <HeaderIcon Icon={HeartIcon} />
