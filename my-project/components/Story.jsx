@@ -6,11 +6,11 @@ import ThumbsUp from "../components/icons/thumbsup";
 
 export default function Story({ story }) {
   return (
-    // <Link href={`/items/${story.id}`}>
+    <Link href={`/stories/${story.article_id}`}>
     <div className="news-card flex flex-row font-inter">
       <div className="px-5 hidden lg:flex flex-col justify-center text-center w-20">
         <UpIcon />
-        <p className="text-gray-600 text-xs font-medium">5</p>
+        <p className="text-gray-600 text-xs font-medium">{story.likes_count}</p>
       </div>
       <div className="px-5">
         <h2 className="font-medium text-sm text-soft-black">{story.title}</h2>
@@ -25,8 +25,7 @@ export default function Story({ story }) {
           <figure className="flex items-start mr-4">
             <ChatIcon />
             <figcaption className="text-xs text-gray-600">
-              {/* {story.comment_count} */}
-              10
+              {story.comments_count}
             </figcaption>
           </figure>
 
@@ -37,6 +36,6 @@ export default function Story({ story }) {
         </div>
       </div>
     </div>
-    // </Link>
+    </Link>
   );
 }
