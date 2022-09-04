@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Stories from "./Stories";
 import Story from "./Story";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -28,7 +27,7 @@ function Feed() {
 
   const getArticles = () => {
     axios
-      .get("http://localhost:8080/articles/all")
+      .get("http://localhost:8080/articles/all_ordered")
       .then((response) => {
         console.log("Success");
         setArticles(response.data);
@@ -41,31 +40,6 @@ function Feed() {
 
   React.useEffect(() => getArticles(), []);
 
-  // return (
-
-  //     <div className="flex-grow h-screen pb-44 pt-6 mr-4 xl:mr-40 overflow-y-auto">
-  //         <div className='mx-auto max-wd-md md:max-w-1g'>
-
-  //             <div><Stories />
-  //             <div class="flex-grow grid grid-cols-1 gap-10 place-content-center h-48">
-  //                 {articles
-  //                     &&
-  //                     articles.map((item, i) => (
-  //                         <div key={i}>
-
-  //                             <div className="box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2 ...">{item.title}</div>
-  //                                 <div>Author: {item.author}</div>
-  //                                 <div> Description: {item.description}</div>
-
-  //                         </div>
-
-  //                     ))
-  //                 }
-  //             </div>
-  //             </div>
-  //         </div>
-  //     </div>
-  // );
   return (
     <>
       <Head>
