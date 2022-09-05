@@ -6,8 +6,7 @@ import Comments from "../../components/Comments";
 import ChatIcon from "../../components/icons/chat";
 import LikeIcon from "../../components/icons/thumbsup";
 import dayjs from "dayjs";
-import localizedFormat from "dayjs/plugin/localizedFormat";
-// import getComments from "../../lib/getComments";
+import CommentBox from "../../components/CommentBox";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Widgets from "../../components/Widgets";
@@ -15,7 +14,7 @@ import Widgets from "../../components/Widgets";
 export default function Best() {
   const { id } = useRouter().query;
 
-  const [data, setArticle] = useState([]);
+  const [article, setArticle] = useState([]);
 
   React.useEffect(() => {
     if (!id) {
@@ -25,7 +24,6 @@ export default function Best() {
       axios
         .get(`http://localhost:8080/articles/find_id?id=${id}`)
         .then((response) => {
-          console.log("Success");
           setArticle(response.data);
         })
         .catch((e) => {
@@ -45,38 +43,40 @@ export default function Best() {
           <div className="container grid justify-center my-10">
             <div className="w-full lg:w-140">
               <Head>
-                <title>MOC News - {data.title}</title>
+                <title>MOC News - {article.title}</title>
               </Head>
               <div>
                 <a
                   className="font-extrabold text-xl fancy-undeline"
                   target="_blank"
                 >
-                  {data.title}
+                  {article.title}
                 </a>
                 <div className="flex mt-2">
                   <p className="text-xs mr-4 text-gray-500">
                     by{" "}
                     <span className="text-red-500 font-medium">
-                      {data.author}
+                      {article.author}
                     </span>
                   </p>
                   <p className="text-xs text-gray-500 mr-4">
-                    {dayjs(data.date).format("MMM D, YYYY")}
+                    {dayjs(article.date).format("MMM D, YYYY")}
                   </p>
                   <p className="text-xs text-gray-500 mr-4 flex items-start">
-                    <LikeIcon />{data.likes_count}
+                    <LikeIcon />
+                    {article.likes_count}
                   </p>
                   <figure className="flex items-start">
                     <ChatIcon />
-                    <figcaption className="text-xs text-gray-500">{data.comments_count}</figcaption>
+                    <figcaption className="text-xs text-gray-500">
+                      {article.comments_count}
+                    </figcaption>
                   </figure>
                 </div>
               </div>
-              {/* <Comments comments={data.comments} /> */}
-              <div className="my-6 text-med">
-                {data.content}
-              </div>
+              <div className="my-6 text-med">{article.content}</div>
+              <CommentBox article_id={id}/>
+              <Comments id={id} />
             </div>
           </div>
         </div>

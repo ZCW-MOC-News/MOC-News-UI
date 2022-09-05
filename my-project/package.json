@@ -33,7 +33,9 @@
     "scrollbar": "^0.1.12",
     "sharp": "^0.30.7",
     "tailwind": "^4.0.0",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "timeago": "^1.6.7",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
