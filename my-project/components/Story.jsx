@@ -31,7 +31,7 @@ export default function Story({ story }) {
 
           <div className="lg:hidden flex items-start">
             <ThumbsUp />
-            <p className="text-xs text-gray-600">100</p>
+            <p className="text-xs text-gray-600">{story.likes_count}</p>
           </div>
         </div>
       </div>
