@@ -2,30 +2,26 @@ import axios from "axios";
 import React from "react";
 
 export default function CommentBox({ article_id }) {
-  const date = formatDate(new Date());
 
   const [formValue, setformValue] = React.useState({
-    account_id: "21",
-    article_id: { article_id }.article_id, 
-    date: date,
-    comment: "",
+    account_id: "13",
+    comment: ""
   });
 
   const handleSubmit = async () => {
     // store the states in the form data
     const commentData = new FormData();
+    const date = formatDate(new Date());
     commentData.append("account_id", formValue.account_id);
-    commentData.append("article_id", formValue.article_id);
-    commentData.append("date", formValue.date);
+    commentData.append("article_id", { article_id }.article_id);
+    commentData.append("date", date);
     commentData.append("comment", formValue.comment);
-
-    console.log(commentData);
 
     try {
       // make axios post request
       const response = await axios({
         method: "post",
-        url: "http://localhost:8080/comments/form-data",
+        url: "http://localhost:8080/comments/add_form",
         data: commentData,
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -33,6 +29,33 @@ export default function CommentBox({ article_id }) {
       console.log(error);
     }
   };
+
+// const handleSubmit = (e) => {
+//     const date = formatDate(new Date());
+//     e.preventDefault();
+//     const userData = {
+//       account_id: formValue.account_id,
+//       article_id: { article_id }.article_id,
+//       date: date,
+//       comment: formValue.comment
+//     };
+//     console.log(userData);
+//     axios
+//       .post("http://localhost:8080/comments/form-data", userData)
+//       .then((response) => {
+//         console.log(response);
+//       })
+//       .catch((error) => {
+//         if (error.response) {
+//           console.log(error.response);
+//           console.log("server responded");
+//         } else if (error.request) {
+//           console.log("network error");
+//         } else {
+//           console.log(error);
+//         }
+//       });
+//   };
 
   const handleChange = (event) => {
     setformValue({
