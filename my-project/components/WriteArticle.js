@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { UserCircleIcon } from '@heroicons/react/solid'
 import { PlusCircleIcon } from "@heroicons/react/solid";
 
 function classNames(...classes) {
@@ -13,7 +12,7 @@ export default function Example() {
       <div>
         <Menu.Button >
           
-          <UserCircleIcon className="icon" />
+          <PlusCircleIcon className="icon" />
         </Menu.Button>
       </div>
 
@@ -31,43 +30,17 @@ export default function Example() {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="/signin"
+                  href="/writeArticle"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Sign in
+                  Add article
                 </a>
               )}
             </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block px-4 py-2 text-sm'
-                  )}
-                >
-                  Create account
-                </a>
-              )}
-            </Menu.Item>
-            <form method="POST" action="#">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    type="submit"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full px-4 py-2 text-left text-sm'
-                    )}
-                  >
-                    Sign out
-                  </button>
-                )}
-              </Menu.Item>
+                       <form method="POST" action="#">
             </form>
           </div>
         </Menu.Items>

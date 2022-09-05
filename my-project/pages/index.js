@@ -8,6 +8,9 @@ export default function Home() {
   return (
     <div>
       <Head>
+      <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+      <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
         <title>MOC News</title>
       </Head>
 

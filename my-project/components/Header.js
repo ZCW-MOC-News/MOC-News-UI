@@ -1,7 +1,9 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 import Dropdown from "./Dropdown.js"
-
+import WriteArticle from "./WriteArticle.js"
+// import Popup from "./Popup.js"
+// import Signin from "../pages/Signin"
 
 import {
     PlusCircleIcon,
@@ -29,12 +31,12 @@ function Header() {
 
             { /* Header Left */ }
             <div className="flex items-center">
-            <a href="http://localhost:3000/"><Image 
+                <Image 
                     src={AppleNewsLogo}
                     width={40}
                     height={40} 
                     layout="fixed"
-                /></a>
+                />
 
                 
 
@@ -60,7 +62,7 @@ function Header() {
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
-                    <a href="http://localhost:3000/"><HeaderIcon active Icon={HomeIcon} /></a>
+                    <HeaderIcon active Icon={HomeIcon} />
                     <HeaderIcon Icon={FireIcon} />
                     <HeaderIcon Icon={BookmarkIcon} />
                     <HeaderIcon Icon={HeartIcon} />
@@ -82,9 +84,13 @@ function Header() {
 
                 <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
                 <CogIcon className="icon" />
-                <PlusCircleIcon className="icon" />
+                {/* <PlusCircleIcon className="icon" /> */}
+                {/* <Popup /> */}
+                <WriteArticle />
                 <ChevronDownIcon className="icon" />
                 <Dropdown />
+                
+                
 
 
             </div>
