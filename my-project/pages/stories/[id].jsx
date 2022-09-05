@@ -12,6 +12,10 @@ import Sidebar from "../../components/Sidebar";
 import Widgets from "../../components/Widgets";
 
 export default function Best() {
+
+  const [userId, setUserId] = React.useState('')
+  React.useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
+
   const { id } = useRouter().query;
 
   const [article, setArticle] = useState([]);
@@ -107,7 +111,7 @@ export default function Best() {
                   </div>
                 </div>
               </div>
-              {showCommentBox && <CommentBox article_id={id} />}
+              {showCommentBox && userId != null && <CommentBox article_id={id} />}
             </div>
             <div class="relative flex py-5 items-center mx-[500px]">
               <div class="flex-grow border-t border-gray-400"></div>

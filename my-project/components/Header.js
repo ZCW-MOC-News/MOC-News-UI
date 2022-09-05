@@ -3,7 +3,6 @@ import AppleNewsLogo from "./AppleNewsLogo.svg"
 import Dropdown from "./Dropdown.js"
 import React, {useState, useEffect} from "react";
 
-
 import {
     PlusCircleIcon,
     FolderIcon,
@@ -28,8 +27,6 @@ function Header() {
     const [username, setUsername] = useState('')
     useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
     useEffect(() => setUsername(typeof window !== 'undefined' ? localStorage.getItem('username') : null), [])
-
-    console.log(username);
 
     return (
         <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
@@ -88,8 +85,8 @@ function Header() {
                     height="40"
                     layout="fixed"
                 />
-
-                <p className="whitespace-nowrap font-semibold pr-3">{username}</p>
+                {userId != null && <p className="whitespace-nowrap font-semibold pr-3">{username}</p>}
+                {userId == null && <p className="whitespace-nowrap font-semibold pr-3">Guest</p>}
                 <CogIcon className="icon" />
                 <PlusCircleIcon className="icon" />
                 <ChevronDownIcon className="icon" />

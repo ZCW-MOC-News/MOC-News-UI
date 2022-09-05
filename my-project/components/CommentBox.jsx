@@ -3,8 +3,13 @@ import React from "react";
 
 export default function CommentBox({ article_id }) {
 
+  const [userId, setUserId] = React.useState('')
+  React.useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
+
+  console.log(userId)
+
   const [formValue, setformValue] = React.useState({
-    account_id: "13",
+    account_id: "",
     comment: ""
   });
 
@@ -12,7 +17,7 @@ export default function CommentBox({ article_id }) {
     // store the states in the form data
     const commentData = new FormData();
     const date = formatDate(new Date());
-    commentData.append("account_id", formValue.account_id);
+    commentData.append("account_id", userId);
     commentData.append("article_id", { article_id }.article_id);
     commentData.append("date", date);
     commentData.append("comment", formValue.comment);
