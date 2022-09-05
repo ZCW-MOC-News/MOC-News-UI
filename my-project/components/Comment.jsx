@@ -24,13 +24,13 @@ export default function Comment({ comment }) {
     //   </div>
     //   <p className="p-2">{comment.comment}</p>
     // </div>
-    <div class="rounded-xl max-w-md shadow-md mt-2">
+    <div class="rounded-xl max-w-lg shadow-md">
       <div className="news-card flex flex-row font-inter">
         <div className="px-5">
-          <h2 className="font-medium text-sm text-soft-black">
+          <h2 className="font-medium text-s text-soft-black mb-2">
             {comment.comment}
           </h2>
-          <div className="flex mt-2">
+          <div className="flex mb-2">
             <p className="hidden lg:inline-block text-xs mr-4 text-gray-600">
               by{" "}
               <span className="text-red-500 font-medium">

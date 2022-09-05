@@ -3,7 +3,6 @@ import Comment from "./Comment";
 import axios from "axios";
 
 export default function Comments({ id }) {
-
   const [comments, setComments] = useState([]);
 
   React.useEffect(() => {
@@ -25,10 +24,14 @@ export default function Comments({ id }) {
   }, [id]);
 
   return (
-    <div className="mb-8">
-      {comments.map((comment, i) => (
-        <Comment comment={comment} />
-      ))}
+    <div className="flex justify-center space-x-3 mx-auto">
+      <div className="container grid justify-center">
+        <div>
+          {comments.map((comment, i) => (
+            <Comment comment={comment} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
