@@ -64,7 +64,7 @@ function Feed() {
               ))}
             </motion.div>
           </div>
-          <button className="more-btn">Load more</button>
+          {/* <button className="more-btn">Load more</button> */}
         </div>
       </div>
     </>

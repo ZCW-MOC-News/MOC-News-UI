@@ -25,7 +25,7 @@ export default function Comments({ id }) {
   }, [id]);
 
   return (
-    <div className="mt-4">
+    <div className="mb-8">
       {comments.map((comment, i) => (
         <Comment comment={comment} />
       ))}
