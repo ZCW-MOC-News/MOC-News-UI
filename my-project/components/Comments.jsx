@@ -2,14 +2,6 @@ import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
 import axios from "axios";
 
-const list = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { ease: "easeOut", staggerChildren: 0.2 },
-  },
-};
-
 export default function Comments({ id }) {
 
   const [comments, setComments] = useState([]);
@@ -33,7 +25,7 @@ export default function Comments({ id }) {
   }, [id]);
 
   return (
-    <div>
+    <div className="mt-4">
       {comments.map((comment, i) => (
         <Comment comment={comment} />
       ))}

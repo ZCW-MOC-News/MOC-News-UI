@@ -65,7 +65,7 @@ export default function CommentBox({ article_id }) {
   };
 
   return (
-    <div class="max-w-lg shadow-md">
+    <div class="rounded-xl max-w-lg shadow-md mt-8">
       <form action="" method="post" class="w-full p-4" onSubmit={handleSubmit}>
         <div class="mb-2">
           <label for="comment" class="text-lg text-gray-600">

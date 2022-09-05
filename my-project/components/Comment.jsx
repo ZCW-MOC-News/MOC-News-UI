@@ -13,7 +13,7 @@ const item = {
 
 export default function Comment({ comment }) {
   return (
-    <div class="max-w-lg shadow-md">
+    <div class="rounded-xl max-w-lg shadow-md">
       <div class="w-full p-4">
         <span className="text-gray-800 text-xs font-bold mr-4 mb-2 inline-block">
           {comment.commenter}
