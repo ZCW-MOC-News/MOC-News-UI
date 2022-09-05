@@ -109,6 +109,11 @@ export default function Best() {
               </div>
               {showCommentBox && <CommentBox article_id={id} />}
             </div>
+            <div class="relative flex py-5 items-center mx-[500px]">
+              <div class="flex-grow border-t border-gray-400"></div>
+              <span class="flex-shrink mx-4 text-gray-400">Comments</span>
+              <div class="flex-grow border-t border-gray-400"></div>
+            </div>
             <Comments id={id} />
           </div>
         </div>
