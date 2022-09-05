@@ -1,9 +1,8 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 import Dropdown from "./Dropdown.js"
-import WriteArticle from "./WriteArticle.js"
+import WriteArticle from "./WriteArticleIcon.js"
 // import Popup from "./Popup.js"
-// import Signin from "../pages/Signin"
 
 import {
     PlusCircleIcon,
