@@ -91,7 +91,6 @@ function Header() {
                 />
                 {userId != null && <p className="whitespace-nowrap font-semibold pr-3">{username}</p>}
                 {userId == null && <p className="whitespace-nowrap font-semibold pr-3">Guest</p>}
-                <CogIcon className="icon" />
                 {/* <PlusCircleIcon className="icon" /> */}
                 {/* <Popup /> */}
                 <WriteArticle />
