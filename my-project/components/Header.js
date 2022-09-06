@@ -94,7 +94,6 @@ function Header() {
                 {/* <PlusCircleIcon className="icon" /> */}
                 {/* <Popup /> */}
                 <WriteArticle />
-                <ChevronDownIcon className="icon" />
                 <Dropdown />
                 
                 
