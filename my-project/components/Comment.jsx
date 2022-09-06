@@ -27,7 +27,7 @@ export default function Comment({ comment }) {
     <div class="rounded-xl max-w-lg shadow-md">
       <div className="news-card flex flex-row font-inter">
         <div className="px-5">
-          <h2 className="font-medium text-s text-soft-black mb-2">
+          <h2 className="font-medium text-s text-soft-black mb-2 break-all">
             {comment.comment}
           </h2>
           <div className="flex mb-2">

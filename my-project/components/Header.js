@@ -1,7 +1,7 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 import Dropdown from "./Dropdown.js"
-
+import React, {useState, useEffect} from "react";
 
 import {
     PlusCircleIcon,
@@ -22,6 +22,12 @@ import {
 import HeaderIcon from "./HeaderIcon";
 
 function Header() {
+
+    const [userId, setUserId] = useState('')
+    const [username, setUsername] = useState('')
+    useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
+    useEffect(() => setUsername(typeof window !== 'undefined' ? localStorage.getItem('username') : null), [])
+
     return (
         <div className ="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
@@ -29,7 +35,7 @@ function Header() {
 
             { /* Header Left */ }
             <div className="flex items-center">
-            <a href="http://localhost:3000/"><Image 
+            <a href="/"><Image 
                     src={AppleNewsLogo}
                     width={40}
                     height={40} 
@@ -60,10 +66,11 @@ function Header() {
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
-                    <a href="http://localhost:3000/"><HeaderIcon active Icon={HomeIcon} /></a>
+                    <a href="/"><HeaderIcon active Icon={HomeIcon} /></a>
                     <HeaderIcon Icon={FireIcon} />
                     <HeaderIcon Icon={BookmarkIcon} />
-                    <HeaderIcon Icon={HeartIcon} />
+                    {userId != null && <a href="/liked"><HeaderIcon Icon={HeartIcon} /></a>}
+                    {userId == null && <HeaderIcon Icon={HeartIcon} />}
                     <HeaderIcon Icon={InformationCircleIcon} />
 
             </div>
@@ -79,8 +86,8 @@ function Header() {
                     height="40"
                     layout="fixed"
                 />
-
-                <p className="whitespace-nowrap font-semibold pr-3">Linda Li</p>
+                {userId != null && <p className="whitespace-nowrap font-semibold pr-3">{username}</p>}
+                {userId == null && <p className="whitespace-nowrap font-semibold pr-3">Guest</p>}
                 <CogIcon className="icon" />
                 <PlusCircleIcon className="icon" />
                 <ChevronDownIcon className="icon" />
