@@ -51,7 +51,16 @@ function Signin() {
       <main className={cx(styles["form-signin"], "text-center", "mt-5")}>
         <form onSubmit={handleSubmit}>
           <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
-          {invalid && <p>Invalid login information</p>}
+          {invalid && (
+            <div class="mt-2 mb-2" role="alert">
+              <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+                Invalid login!
+              </div>
+              <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-3 py-2 text-red-700">
+                <p>Please try again.</p>
+              </div>
+            </div>
+          )}
           <div className="form-floating">
             <input
               type="username"

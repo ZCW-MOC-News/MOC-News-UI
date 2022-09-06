@@ -69,7 +69,8 @@ function Header() {
                     <a href="/"><HeaderIcon active Icon={HomeIcon} /></a>
                     <HeaderIcon Icon={FireIcon} />
                     <HeaderIcon Icon={BookmarkIcon} />
-                    <a href="/liked"><HeaderIcon Icon={HeartIcon} /></a>
+                    {userId != null && <a href="/liked"><HeaderIcon Icon={HeartIcon} /></a>}
+                    {userId == null && <HeaderIcon Icon={HeartIcon} />}
                     <HeaderIcon Icon={InformationCircleIcon} />
 
             </div>
