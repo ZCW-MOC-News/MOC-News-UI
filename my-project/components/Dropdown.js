@@ -1,12 +1,17 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { UserCircleIcon } from '@heroicons/react/solid'
+import React, {useState, useEffect} from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Example() {
+
+  const [userId, setUserId] = useState('')
+  useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
+
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -27,6 +32,21 @@ export default function Example() {
       >
         <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="py-1">
+          {userId != null && 
+            <Menu.Item>
+              {({ active }) => (
+                <a
+                  href="#"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Profile
+                </a>
+              )}
+            </Menu.Item>}
+          {userId == null && 
             <Menu.Item>
               {({ active }) => (
                 <a
@@ -39,7 +59,8 @@ export default function Example() {
                   Sign in
                 </a>
               )}
-            </Menu.Item>
+            </Menu.Item>}
+            {userId == null && 
             <Menu.Item>
               {({ active }) => (
                 <a
@@ -52,22 +73,21 @@ export default function Example() {
                   Create account
                 </a>
               )}
-            </Menu.Item>
-            <form method="POST" action="#">
+            </Menu.Item>}
+            {userId != null && 
               <Menu.Item>
                 {({ active }) => (
-                  <button
-                    type="submit"
-                    className={classNames(
-                      active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                      'block w-full px-4 py-2 text-left text-sm'
-                    )}
-                  >
-                    Sign out
-                  </button>
-                )}
-              </Menu.Item>
-            </form>
+                <a
+                  href="/signout"
+                  className={classNames(
+                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                    'block px-4 py-2 text-sm'
+                  )}
+                >
+                  Sign out
+                </a>
+              )}
+              </Menu.Item>}
           </div>
         </Menu.Items>
       </Transition>
