@@ -1,6 +1,8 @@
 import Image from "next/image";
 import AppleNewsLogo from "./AppleNewsLogo.svg"
 import Dropdown from "./Dropdown.js"
+import WriteArticle from "./WriteArticleIcon.js"
+// import Popup from "./Popup.js"
 import React, {useState, useEffect} from "react";
 
 import {
@@ -34,7 +36,7 @@ function Header() {
         {/*,m <h1 className="text-xl whitespace-nowrap font-semibold pr-3">MOC News</h1> */}
 
             { /* Header Left */ }
-            <div className="flex items-center">
+            <div className="flex items-center"> 
             <a href="/"><Image 
                     src={AppleNewsLogo}
                     width={40}
@@ -42,7 +44,7 @@ function Header() {
                     layout="fixed"
                 /></a>
 
-                
+
 
                 <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
 
@@ -66,6 +68,7 @@ function Header() {
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
+                    {/* <HeaderIcon active Icon={HomeIcon} /> */}
                     <a href="/"><HeaderIcon active Icon={HomeIcon} /></a>
                     <HeaderIcon Icon={FireIcon} />
                     <HeaderIcon Icon={BookmarkIcon} />
@@ -88,10 +91,12 @@ function Header() {
                 />
                 {userId != null && <p className="whitespace-nowrap font-semibold pr-3">{username}</p>}
                 {userId == null && <p className="whitespace-nowrap font-semibold pr-3">Guest</p>}
-                <CogIcon className="icon" />
-                <PlusCircleIcon className="icon" />
-                <ChevronDownIcon className="icon" />
+                {/* <PlusCircleIcon className="icon" /> */}
+                {/* <Popup /> */}
+                <WriteArticle />
                 <Dropdown />
+                
+                
 
 
             </div>

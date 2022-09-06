@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { UserCircleIcon } from '@heroicons/react/solid'
+import { PlusCircleIcon } from "@heroicons/react/solid";
 import React, {useState, useEffect} from "react";
 
 function classNames(...classes) {
