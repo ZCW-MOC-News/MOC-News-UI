@@ -7,8 +7,8 @@ function WriteArticle() {
     <>
     <div> <Header/> </div> 
 <form>
-   <div class="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
-       <div class="flex justify-between items-center py-2 px-3 border-b dark:border-gray-600">
+   <div class="ml-96 mr-10 mt-24 mb-4 w-fit bg-gray-50 rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+       <div class="flex justify-between items-center py-2 px-48 border-b dark:border-gray-600">
            <div class="flex flex-wrap items-center divide-gray-200 sm:divide-x dark:divide-gray-600">
                <div class="flex items-center space-x-1 sm:pr-4">
                    <button type="button" class="p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
@@ -70,7 +70,7 @@ function WriteArticle() {
            <textarea id="editor" rows="8" class="block px-0 w-full text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder=" Write an article..." required></textarea>
        </div>
    </div>
-   <button type="submit" class="inline-flex items-center px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+   <button type="submit" class="inline-flex items-center ml-96 px-5 py-2.5 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
        Publish post
    </button>
 </form>
