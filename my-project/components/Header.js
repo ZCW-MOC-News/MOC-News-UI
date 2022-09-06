@@ -36,14 +36,13 @@ function Header() {
         {/*,m <h1 className="text-xl whitespace-nowrap font-semibold pr-3">MOC News</h1> */}
 
             { /* Header Left */ }
-            <div className="flex items-center">
-                <Image 
+            <div className="flex items-center"> 
             <a href="/"><Image 
                     src={AppleNewsLogo}
                     width={40}
                     height={40} 
                     layout="fixed"
-                />
+                /></a>
 
 
 
@@ -69,7 +68,7 @@ function Header() {
             <div className ="flex justify-center flex-grow">
 
                 <div className='flex space-x-10 md:space-x-2'>
-                    <HeaderIcon active Icon={HomeIcon} />
+                    {/* <HeaderIcon active Icon={HomeIcon} /> */}
                     <a href="/"><HeaderIcon active Icon={HomeIcon} /></a>
                     <HeaderIcon Icon={FireIcon} />
                     <HeaderIcon Icon={BookmarkIcon} />
