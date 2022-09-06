@@ -6,8 +6,6 @@ export default function CommentBox({ article_id }) {
   const [userId, setUserId] = React.useState('')
   React.useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
 
-  console.log(userId)
-
   const [formValue, setformValue] = React.useState({
     account_id: "",
     comment: ""

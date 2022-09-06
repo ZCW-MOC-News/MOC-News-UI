@@ -1,10 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import axios from "axios";
-import Head from "next/head";
 import Comments from "../../components/Comments";
-import ChatIcon from "../../components/icons/chat";
-import LikeIcon from "../../components/icons/thumbsup";
 import dayjs from "dayjs";
 import CommentBox from "../../components/CommentBox";
 import Header from "../../components/Header";
@@ -12,9 +9,14 @@ import Sidebar from "../../components/Sidebar";
 import Widgets from "../../components/Widgets";
 
 export default function Best() {
-
-  const [userId, setUserId] = React.useState('')
-  React.useEffect(() => setUserId(typeof window !== 'undefined' ? localStorage.getItem('id') : null), [])
+  const [userId, setUserId] = React.useState("");
+  React.useEffect(
+    () =>
+      setUserId(
+        typeof window !== "undefined" ? localStorage.getItem("id") : null
+      ),
+    []
+  );
 
   const { id } = useRouter().query;
 
@@ -40,6 +42,26 @@ export default function Best() {
 
   const [showCommentBox, setShowCommentBox] = useState(false);
 
+  const handleSubmit = async () => {
+    // store the states in the form data
+    const likeData = new FormData();
+    likeData.append("account_id", { userId }.userId);
+    likeData.append("article_id", { id }.id);
+    document.location.href = "";
+
+    try {
+      // make axios post request
+      const response = await axios({
+        method: "post",
+        url: "http://localhost:8080/likes/add",
+        data: likeData,
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -57,7 +79,7 @@ export default function Best() {
                 </div>
                 <div class="flex items-center space-x-8">
                   <button class="rounded-2xl border bg-neutral-100 px-3 py-1 text-xs font-semibold">
-                    Category
+                    {article.category}
                   </button>
                   <div class="text-xs text-neutral-500">
                     {dayjs(article.date).format("MMM D, YYYY")}
@@ -91,7 +113,10 @@ export default function Best() {
                       </svg>
                       <span>{article.comments_count}</span>
                     </div>
-                    <div class="flex cursor-pointer items-center transition hover:text-slate-600">
+                    <div
+                      class="flex cursor-pointer items-center transition hover:text-slate-600"
+                      onClick={() => handleSubmit()}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="mr-1.5 h-5 w-5"
@@ -111,7 +136,9 @@ export default function Best() {
                   </div>
                 </div>
               </div>
-              {showCommentBox && userId != null && <CommentBox article_id={id} />}
+              {showCommentBox && userId != null && (
+                <CommentBox article_id={id} />
+              )}
             </div>
             <div class="relative flex py-5 items-center mx-[500px]">
               <div class="flex-grow border-t border-gray-400"></div>

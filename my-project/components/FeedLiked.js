@@ -22,12 +22,15 @@ const item = {
   },
 };
 
-function Feed() {
+function FeedLiked() {
   const [articles, setArticles] = useState([]);
 
   const getArticles = () => {
     axios
-      .get("http://localhost:8080/articles/all_ordered")
+      .get(
+        "http://localhost:8080/articles/liked?account_id=" +
+          localStorage.getItem("id")
+      )
       .then((response) => {
         console.log("Success");
         setArticles(response.data);
@@ -38,7 +41,7 @@ function Feed() {
       });
   };
 
-  React.useEffect(() => getArticles(), []);
+  if (typeof window !== "undefined") React.useEffect(() => getArticles(), []);
 
   return (
     <>
@@ -48,7 +51,7 @@ function Feed() {
       <div className="flex justify-center space-x-3 mx-auto">
         <div className="lg:col-span-2 mt-8">
           <span className="main-title flex items-center text-soft-black">
-            <h1 className="fancy-undeline text-xl">MOC News</h1>
+            <h1 className="fancy-undeline text-xl">Liked Stories</h1>
           </span>
           <div className="mt-4">
             <motion.div
@@ -64,11 +67,11 @@ function Feed() {
               ))}
             </motion.div>
           </div>
-          <button className="more-btn">Load more</button>
+          {/* <button className="more-btn">Load more</button> */}
         </div>
       </div>
     </>
   );
 }
 
-export default Feed;
+export default FeedLiked;
