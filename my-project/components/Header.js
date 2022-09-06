@@ -37,7 +37,7 @@ function Header() {
                     layout="fixed"
                 />
 
-                
+
 
                 <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
 
