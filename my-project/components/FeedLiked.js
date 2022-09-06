@@ -41,7 +41,10 @@ function FeedLiked() {
       });
   };
 
-  if (typeof window !== "undefined") React.useEffect(() => getArticles(), []);
+  if (typeof window !== "undefined") {
+    console.log(localStorage.getItem("id"));
+    React.useEffect(() => getArticles(), []);
+  } 
 
   return (
     <>
