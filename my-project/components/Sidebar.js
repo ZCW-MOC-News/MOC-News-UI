@@ -19,11 +19,10 @@ function Sidebar() {
     return (
         <div className="p-22 mt-5 max-w-[600px] xl:min-w-[300px]">
             {/* <SidebarRow src={session.user.image} title={session.user.name} /> */}
-            <SidebarRow Icon={GlobeAltIcon} title="General" />
+            <a href="/"><SidebarRow Icon={GlobeAltIcon} title="General" /></a>
             <SidebarRow Icon={OfficeBuildingIcon} title="Business" />
             <SidebarRow Icon={FilmIcon} title="Entertainment" />
             <SidebarRow Icon={EyeIcon} title="Health" />
-            <SidebarRow Icon={BeakerIcon} title="Science" />
             <SidebarRow Icon={SpeakerphoneIcon} title="Sports" />
             <SidebarRow Icon={ChipIcon} title="Technology" />
 

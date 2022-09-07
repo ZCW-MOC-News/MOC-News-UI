@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Header from "../components/Header";
 
 export default function Signup() {
   const [formValue, setformValue] = React.useState({
@@ -43,7 +44,9 @@ export default function Signup() {
 
   return (
     <section class="bg-gray-50 dark:bg-white-900">
+      <div><Header /></div>
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        
         {invalid && (
           <div class="mt-2 mb-2" role="alert">
             <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">

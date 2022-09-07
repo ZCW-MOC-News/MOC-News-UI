@@ -8,7 +8,7 @@ export default function Liked() {
     return (
       <div>
         <Head>
-          <title>Liked Stories</title>
+          <title>Liked Articles</title>
         </Head>
   
         {/* <h1>Let's build MOC News!</h1> */}
