@@ -3,9 +3,9 @@ import { DotsHorizontalIcon } from "@heroicons/react/outline"
 import Contact from "./Contact";
 
 const contacts = [
-    {src: "https://links.papareact.com/f0p", name: "Meilin Li"},
-    {src: "https://links.papareact.com/f0p", name: "Octavia Gomes"},
-    {src: "https://links.papareact.com/f0p", name: "Chris Kent"}
+    {src: "https://i.imgur.com/XrTYXmF.jpg", name: "Meilin Li"},
+    {src: "https://i.imgur.com/bXUaAVD.jpeg", name: "Octavia Gomes"},
+    {src: "https://i.imgur.com/EtpG9Vx.jpg", name: "Chris Kent"}
 
 ]
 
