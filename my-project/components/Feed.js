@@ -48,7 +48,7 @@ function Feed() {
       <div className="flex justify-center space-x-3 mx-auto">
         <div className="lg:col-span-2 mt-8">
           <span className="main-title flex items-center text-soft-black">
-            <h1 className="fancy-undeline text-xl">MOC News</h1>
+            <h1 className="fancy-undeline text-3xl">MOC News</h1>
           </span>
           <div className="mt-4">
             <motion.div

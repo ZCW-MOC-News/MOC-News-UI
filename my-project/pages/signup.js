@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Header from "../components/Header";
 
 export default function Signup() {
   const [formValue, setformValue] = React.useState({
@@ -43,7 +44,9 @@ export default function Signup() {
 
   return (
     <section class="bg-gray-50 dark:bg-white-900">
+      <div><Header /></div>
       <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+        
         {invalid && (
           <div class="mt-2 mb-2" role="alert">
             <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
@@ -91,7 +94,7 @@ export default function Signup() {
                   name="password"
                   id="password"
                   placeholder="••••••••"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                   required="true"
                   onChange={(e) =>
                     setformValue({ ...formValue, password: e.target.value })
@@ -110,7 +113,7 @@ export default function Signup() {
                   name="confirm-password"
                   id="confirm-password"
                   placeholder="••••••••"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500"
                   required="true"
                 />
               </div>
