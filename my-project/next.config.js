@@ -4,7 +4,8 @@ module.exports = {
       "links.papareact.com",
       "platform-looksaside.fbsbx.com",
       "firebasestorage.googleapis.com",
-      
+      "imgur.com",
+      "i.imgur.com"
     ],
   },
 };

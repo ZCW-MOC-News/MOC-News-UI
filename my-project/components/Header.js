@@ -81,7 +81,7 @@ function Header() {
                 {/* Profile Picture for User */}
                 <Image
                     className="rounded-full cursor-pointer"
-                    src={AppleNewsLogo}
+                    src="https://i.imgur.com/Cnv72Ei.png"
                     width="40"
                     height="40"
                     layout="fixed"

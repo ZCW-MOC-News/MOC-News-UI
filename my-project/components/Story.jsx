@@ -13,7 +13,7 @@ export default function Story({ story }) {
         <p className="text-gray-600 text-xs font-medium">{story.likes_count}</p>
       </div>
       <div className="px-5">
-        <h2 className="font-medium text-sm text-soft-black">{story.title}</h2>
+        <h2 className="font-medium text-l text-soft-black">{story.title}</h2>
         <div className="flex mt-2">
           <p className="hidden lg:inline-block text-xs mr-4 text-gray-600">
             by <span className="text-red-500 font-medium">{story.author}</span>
