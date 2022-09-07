@@ -88,7 +88,7 @@ export default function Best() {
               </div>
               <div class="mt-4 mb-6">
                 <div class="mb-3 text-xl font-bold">{article.title}</div>
-                <div class="text-sm text-neutral-600">{article.content}</div>
+                <div class="text-sm text-neutral-600" dangerouslySetInnerHTML={{__html: article.content}}></div>
               </div>
               <div>
                 <div class="flex items-center justify-between text-slate-500">
