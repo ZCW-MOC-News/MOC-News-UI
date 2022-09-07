@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import Header from "../components/Header";
 
 export default function Post() {
   const [formValue, setformValue] = React.useState({
@@ -60,6 +61,7 @@ export default function Post() {
   React.useEffect(() => getCategories(), []);
 
   return (
+    <div><Header />
     <div class="max-w-2xl mx-auto">
       <form onSubmit={handleSubmit}>
         <div className="mt-3">
@@ -346,6 +348,6 @@ export default function Post() {
           Publish post
         </button>
       </form>
-    </div>
+    </div></div>
   );
 }
