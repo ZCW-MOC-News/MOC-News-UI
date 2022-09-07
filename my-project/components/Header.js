@@ -81,17 +81,15 @@ function Header() {
                 {/* Profile Picture for User */}
                 <Image
                     className="rounded-full cursor-pointer"
-                    src="https://i.imgur.com/Cnv72Ei.png"
+                    src={AppleNewsLogo}
                     width="40"
                     height="40"
                     layout="fixed"
                 />
                 {userId != null && <p className="whitespace-nowrap font-semibold pr-3">{username}</p>}
                 {userId == null && <p className="whitespace-nowrap font-semibold pr-3">Guest</p>}
-                <CogIcon className="icon" />
                 {userId != null && <a href="/poststories"><PlusCircleIcon className="icon" /></a>}
                 {userId == null && <PlusCircleIcon className="icon" />}
-                <ChevronDownIcon className="icon" />
                 <Dropdown />
 
 
@@ -101,4 +99,3 @@ function Header() {
 }
 
 export default Header;
-
