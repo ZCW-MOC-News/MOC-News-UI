@@ -23,7 +23,6 @@ function Sidebar() {
             <SidebarRow Icon={OfficeBuildingIcon} title="Business" />
             <SidebarRow Icon={FilmIcon} title="Entertainment" />
             <SidebarRow Icon={EyeIcon} title="Health" />
-            <SidebarRow Icon={BeakerIcon} title="Science" />
             <SidebarRow Icon={SpeakerphoneIcon} title="Sports" />
             <SidebarRow Icon={ChipIcon} title="Technology" />
 
